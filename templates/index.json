@@ -9,6 +9,71 @@
  */
 {
   "sections": {
+    "video_banner_rUkVQB": {
+      "type": "video-banner",
+      "blocks": {
+        "heading_mDGQmD": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Media heading",
+            "heading_style": "section-heading",
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mDGQmD"
+      ],
+      "settings": {
+        "link": "shopify://collections/winter-25-men",
+        "target_blank": false,
+        "overlap": "disable",
+        "content_on_hover": false,
+        "desktop_height_type": "pixels",
+        "desktop_pixels_height": 600,
+        "video_load": "shopify://files/videos/WhatsApp Video 2025-10-22 at 12.12.29 PM.mp4",
+        "center_text": true,
+        "vertical_content_position": "center",
+        "horizontal_content_position": "center",
+        "content_width": "regular",
+        "fill_content": false,
+        "overlay_opacity": 0,
+        "mobile_overlay_opacity": 0,
+        "button_min_width": "180px",
+        "button_padding_horizontal": "32px",
+        "button_padding_vertical": "16px",
+        "button_font_size": "16px",
+        "mobile_button_padding_horizontal": "24px",
+        "mobile_button_padding_vertical": "12px",
+        "mobile_button_font_size": "14px",
+        "button_layout": "horizontal",
+        "enable_mute": false,
+        "enable_pause": false,
+        "control_horizontal_position": "flex-end",
+        "mobile_video_load": "shopify://files/videos/teaser 1 (1).mp4",
+        "mobile_height_type": "pixels",
+        "mobile_pixels_height": 520,
+        "content_under_video": false,
+        "full_width": true,
+        "grid_style": "page",
+        "disable_max_width": false,
+        "show_bottom_line": false,
+        "color_scheme": "",
+        "banner_color_scheme": "background-2",
+        "overlapped_header_color_scheme": "",
+        "logo_style": "overlapped",
+        "mobile_color_scheme": "",
+        "mobile_banner_color_scheme": "background-2",
+        "mobile_overlapped_header_color_scheme": "",
+        "mobile_logo_style": "overlapped",
+        "section_framing": "disable",
+        "enable_sticky_content": true,
+        "sticky_offset": 120,
+        "top_spacing": 0.1,
+        "bottom_spacing": 0.1
+      }
+    },
     "slideshow_kg8QdU": {
       "type": "slideshow",
       "blocks": {
@@ -91,6 +156,7 @@
         },
         "loop_video_thHiwi": {
           "type": "loop_video",
+          "disabled": true,
           "settings": {
             "video_load": "shopify://files/videos/WhatsApp Video 2025-10-22 at 12.12.29 PM.mp4",
             "link": "",
@@ -326,29 +392,34 @@
         "collection_EE4q8X": {
           "type": "collection",
           "settings": {
-            "collection": "men-bottoms"
+            "collection": "men-blazers",
+            "custom_collection_image": "shopify://shop_images/blazer.webp"
           }
         },
         "collection_pG3pjV": {
           "type": "collection",
           "settings": {
-            "collection": "men-shirts"
+            "collection": "men-denim",
+            "custom_collection_image": "shopify://shop_images/denim.webp"
           }
         },
         "collection_8PmHNf": {
           "type": "collection",
           "settings": {
-            "collection": "jackets"
+            "collection": "jackets",
+            "custom_collection_image": "shopify://shop_images/Jackets_Coats_ff7faa1c-861c-40b0-ab6e-38886b77f3db.webp"
           }
         },
         "collection_jwQyi6": {
           "type": "collection",
           "settings": {
-            "collection": "panama"
+            "collection": "men-shoes",
+            "custom_collection_image": "shopify://shop_images/shoes.webp"
           }
         },
         "collection_JyPxTg": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "fragrances"
           }
@@ -375,7 +446,7 @@
         "show_more_button_icon": "",
         "swap_show_more_button_icon": false,
         "show_more_button_style": "outlined",
-        "desktop_item_width": 5,
+        "desktop_item_width": 4,
         "alignment_fewer_items": "left",
         "mobile_item_min_width": 250,
         "show_arrows": true,
@@ -428,8 +499,8 @@
         "collection_gXMVp3": {
           "type": "collection",
           "settings": {
-            "collection": "men-blazers",
-            "custom_collection_image": "shopify://shop_images/MOB_BANNER_copy.jpg"
+            "collection": "warmth-in-motion-winter-vibe-edit25",
+            "custom_collection_image": "shopify://shop_images/warmth.webp"
           }
         },
         "collection_gqEwfT": {
@@ -2422,71 +2493,6 @@
         "bottom_spacing": 1
       }
     },
-    "video_banner_rUkVQB": {
-      "type": "video-banner",
-      "blocks": {
-        "heading_mDGQmD": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "Media heading",
-            "heading_style": "section-heading",
-            "heading_tag": "h2"
-          }
-        }
-      },
-      "block_order": [
-        "heading_mDGQmD"
-      ],
-      "disabled": true,
-      "settings": {
-        "link": "",
-        "target_blank": false,
-        "overlap": "disable",
-        "content_on_hover": false,
-        "desktop_height_type": "pixels",
-        "desktop_pixels_height": 900,
-        "video_load": "shopify://files/videos/Naya Dour Film.webm",
-        "center_text": true,
-        "vertical_content_position": "center",
-        "horizontal_content_position": "center",
-        "content_width": "regular",
-        "fill_content": false,
-        "overlay_opacity": 0,
-        "mobile_overlay_opacity": 0,
-        "button_min_width": "180px",
-        "button_padding_horizontal": "32px",
-        "button_padding_vertical": "16px",
-        "button_font_size": "16px",
-        "mobile_button_padding_horizontal": "24px",
-        "mobile_button_padding_vertical": "12px",
-        "mobile_button_font_size": "14px",
-        "button_layout": "horizontal",
-        "enable_mute": false,
-        "enable_pause": false,
-        "control_horizontal_position": "flex-end",
-        "mobile_height_type": "pixels",
-        "mobile_pixels_height": 520,
-        "content_under_video": false,
-        "full_width": true,
-        "grid_style": "page",
-        "disable_max_width": false,
-        "show_bottom_line": false,
-        "color_scheme": "",
-        "banner_color_scheme": "background-2",
-        "overlapped_header_color_scheme": "",
-        "logo_style": "overlapped",
-        "mobile_color_scheme": "",
-        "mobile_banner_color_scheme": "background-2",
-        "mobile_overlapped_header_color_scheme": "",
-        "mobile_logo_style": "overlapped",
-        "section_framing": "disable",
-        "enable_sticky_content": true,
-        "sticky_offset": 120,
-        "top_spacing": 0.1,
-        "bottom_spacing": 0.1
-      }
-    },
     "contact_form_qexzcx": {
       "type": "contact-form",
       "blocks": {
@@ -2702,6 +2708,7 @@
     }
   },
   "order": [
+    "video_banner_rUkVQB",
     "slideshow_kg8QdU",
     "anchor_link_qH4TVa",
     "scrolling_promotion_DQrjGR",
@@ -2724,7 +2731,6 @@
     "media_with_text_98YP69",
     "media_with_text_nNEKya",
     "featured_blog_with_banner_Qp8CVe",
-    "video_banner_rUkVQB",
     "contact_form_qexzcx",
     "collection_tabs_RRT7ff"
   ]
