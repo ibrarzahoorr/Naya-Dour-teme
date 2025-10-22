@@ -121,21 +121,6 @@
     },
     "video_banner_pbLkAW": {
       "type": "video-banner",
-      "blocks": {
-        "button_fbtFJb": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Discover",
-            "button_link": "",
-            "target_blank": false,
-            "button_style": "solid"
-          }
-        }
-      },
-      "block_order": [
-        "button_fbtFJb"
-      ],
       "name": "t:sections.video-banner.name",
       "settings": {
         "link": "shopify://collections/winter-25-women",
@@ -192,33 +177,34 @@
         "collection_q6Gikr": {
           "type": "collection",
           "settings": {
-            "collection": "women-bottoms",
-            "custom_collection_image": "shopify://shop_images/women_bottom.webp"
+            "collection": "women-blazers",
+            "custom_collection_image": "shopify://shop_images/blazer_a2f11b09-3cd2-4a74-8dfd-53f89237bf02.webp"
           }
         },
         "collection_jL89hR": {
           "type": "collection",
           "settings": {
-            "collection": "women-shirts",
-            "custom_collection_image": "shopify://shop_images/women_shirts.webp"
+            "collection": "women-jackets-coats",
+            "custom_collection_image": "shopify://shop_images/jacket.webp"
           }
         },
         "collection_rtwVeq": {
           "type": "collection",
           "settings": {
-            "collection": "women-jackets-coats",
-            "custom_collection_image": "shopify://shop_images/jackets_coats.webp"
+            "collection": "women-denim",
+            "custom_collection_image": "shopify://shop_images/denim_6fe4f794-4756-492a-b18b-4babc38f7a74.webp"
           }
         },
         "collection_kKwMWL": {
           "type": "collection",
           "settings": {
-            "collection": "accessories",
-            "custom_collection_image": "shopify://shop_images/accessories.webp"
+            "collection": "shoes-women",
+            "custom_collection_image": "shopify://shop_images/shoes_4ae66c93-72ec-4b91-83e1-309a01f044fe.webp"
           }
         },
         "collection_aJP4ge": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "fragrances"
           }
@@ -245,7 +231,7 @@
         "show_more_button_icon": "",
         "swap_show_more_button_icon": false,
         "show_more_button_style": "outlined",
-        "desktop_item_width": 5,
+        "desktop_item_width": 4,
         "alignment_fewer_items": "left",
         "mobile_item_min_width": 250,
         "show_arrows": true,
@@ -298,22 +284,22 @@
         "collection_Gi9FA8": {
           "type": "collection",
           "settings": {
-            "collection": "men-blazers",
-            "custom_collection_image": "shopify://shop_images/haze_studio.webp"
+            "collection": "warmth-in-motion-winter-vibe-edit25",
+            "custom_collection_image": "shopify://shop_images/warmth.webp"
           }
         },
         "collection_n3GLqj": {
           "type": "collection",
           "settings": {
-            "collection": "men-sale",
-            "custom_collection_image": "shopify://shop_images/joona.webp"
+            "collection": "women-sale",
+            "custom_collection_image": "shopify://shop_images/haze_studio_8a334fb2-23b1-4600-8b70-f79d3dc628b9.webp"
           }
         },
         "collection_eAKwzL": {
           "type": "collection",
           "settings": {
-            "collection": "men-jackets-coats",
-            "custom_collection_image": "shopify://shop_images/jackets_coats.webp"
+            "collection": "falling-for-you-women",
+            "custom_collection_image": "shopify://shop_images/Falling_for_you_076d1fef-43c6-4e1c-b19b-6802c9bcaebe.webp"
           }
         },
         "collection_a3zrDd": {
@@ -461,7 +447,7 @@
         "collection_7Gantk": {
           "type": "collection",
           "settings": {
-            "collection": "men-shirts",
+            "collection": "women-shirts",
             "custom_heading": "",
             "info_card_style": "hide",
             "info_card_position": "first",
@@ -484,7 +470,7 @@
         "collection_hVeXix": {
           "type": "collection",
           "settings": {
-            "collection": "men-bottoms",
+            "collection": "women-bottoms",
             "custom_heading": "",
             "info_card_style": "hide",
             "info_card_position": "first",
@@ -506,6 +492,7 @@
         },
         "collection_nmqVBW": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "perfect-duos-men",
             "custom_heading": "Third collection",
