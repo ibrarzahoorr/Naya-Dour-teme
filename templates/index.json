@@ -507,14 +507,14 @@
           "type": "collection",
           "settings": {
             "collection": "men-sale",
-            "custom_collection_image": "shopify://shop_images/t-shirt_polo_banner_mob.png"
+            "custom_collection_image": "shopify://shop_images/haze_studio_8a334fb2-23b1-4600-8b70-f79d3dc628b9.webp"
           }
         },
         "collection_Xy6tbx": {
           "type": "collection",
           "settings": {
             "collection": "men-jackets-coats",
-            "custom_collection_image": "shopify://shop_images/fold-banner-5_37379623-492f-445d-a6e6-5b596d44abf9.jpg"
+            "custom_collection_image": "shopify://shop_images/Falling_for_you_137a1324-30ed-4c1f-a712-487d277edb2c.webp"
           }
         },
         "collection_dtNWzM": {
@@ -2625,6 +2625,7 @@
         },
         "collection_CM8FYH": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "perfect-duos-men",
             "custom_heading": "Third collection",
