@@ -14,14 +14,6 @@
     "social_grid_WqREmt": {
       "type": "social-grid",
       "blocks": {
-        "loop_video_eHMtDh": {
-          "type": "loop_video",
-          "settings": {
-            "video_load": "shopify://files/videos/zara-4.mp4",
-            "link": "",
-            "target_blank": false
-          }
-        },
         "image_DhJrTJ": {
           "type": "image",
           "settings": {
@@ -38,6 +30,14 @@
             "target_blank": false
           }
         },
+        "loop_video_eHMtDh": {
+          "type": "loop_video",
+          "settings": {
+            "video_load": "shopify://files/videos/teaser 1 (1).mp4",
+            "link": "",
+            "target_blank": false
+          }
+        },
         "image_qTLdWA": {
           "type": "image",
           "settings": {
@@ -48,9 +48,9 @@
         }
       },
       "block_order": [
-        "loop_video_eHMtDh",
         "image_DhJrTJ",
         "image_rAiTWa",
+        "loop_video_eHMtDh",
         "image_qTLdWA"
       ],
       "custom_css": [
@@ -94,7 +94,7 @@
         "disable_grid_gaps": true,
         "show_bottom_line": false,
         "color_scheme": "background-1",
-        "banner_color_scheme": "background-2",
+        "banner_color_scheme": "background-9",
         "overlapped_header_color_scheme": "",
         "logo_style": "overlapped",
         "mobile_color_scheme": "",
