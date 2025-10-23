@@ -391,6 +391,7 @@
         },
         "text_jJBJqH": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p><em><strong>Live Now</strong></em></p>",
             "text_style": "subheading-font"
