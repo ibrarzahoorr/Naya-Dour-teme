@@ -210,6 +210,16 @@
             "mobile_top_spacing": 1
           }
         },
+        "sku_Hg7Fw4": {
+          "type": "sku",
+          "settings": {
+            "text_style": "body-font",
+            "uppercase": false,
+            "bolder_font": false,
+            "top_spacing": 1,
+            "mobile_top_spacing": 1
+          }
+        },
         "ask_question_NxtQXa": {
           "type": "ask_question",
           "settings": {
@@ -390,6 +400,7 @@
         "second_container_FE4QCE",
         "text_9CJAmC",
         "tabs_HMziG6",
+        "sku_Hg7Fw4",
         "ask_question_NxtQXa",
         "icons_with_text_caHVxC",
         "text_Q4JNBz",
