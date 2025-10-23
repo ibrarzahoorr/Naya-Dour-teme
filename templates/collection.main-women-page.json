@@ -285,21 +285,21 @@
           "type": "collection",
           "settings": {
             "collection": "warmth-in-motion-winter-vibe-edit25",
-            "custom_collection_image": "shopify://shop_images/warmth.webp"
+            "custom_collection_image": "shopify://shop_images/warmth_in_motion.webp"
           }
         },
         "collection_n3GLqj": {
           "type": "collection",
           "settings": {
             "collection": "women-sale",
-            "custom_collection_image": "shopify://shop_images/haze_studio_8a334fb2-23b1-4600-8b70-f79d3dc628b9.webp"
+            "custom_collection_image": "shopify://shop_images/haze_studio_cf276479-c802-4b6f-9b9f-a4f053e1d618.webp"
           }
         },
         "collection_eAKwzL": {
           "type": "collection",
           "settings": {
             "collection": "falling-for-you-women",
-            "custom_collection_image": "shopify://shop_images/Falling_for_you_076d1fef-43c6-4e1c-b19b-6802c9bcaebe.webp"
+            "custom_collection_image": "shopify://shop_images/Falling_for_you_4a160fa9-5a2f-448e-92e1-3566cf29f9c5.webp"
           }
         },
         "collection_a3zrDd": {
@@ -408,7 +408,7 @@
         "target_blank": false,
         "overlap": "disable",
         "content_on_hover": false,
-        "first_image": "shopify://shop_images/Featured_Collection_5524afa2-5cbe-4f9b-b1ee-9d950d2fcf42.webp",
+        "first_image": "shopify://shop_images/featured.webp",
         "desktop_height_type": "pixels",
         "desktop_pixels_height": 720,
         "center_text": false,

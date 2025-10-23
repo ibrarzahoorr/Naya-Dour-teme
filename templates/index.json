@@ -500,14 +500,14 @@
           "type": "collection",
           "settings": {
             "collection": "warmth-in-motion-winter-vibe-edit25",
-            "custom_collection_image": "shopify://shop_images/warmth.webp"
+            "custom_collection_image": "shopify://shop_images/warmth_in_motion_1450f0cf-58ae-4ca0-b63a-773edfc90962.webp"
           }
         },
         "collection_gqEwfT": {
           "type": "collection",
           "settings": {
             "collection": "men-sale",
-            "custom_collection_image": "shopify://shop_images/haze_studio_8a334fb2-23b1-4600-8b70-f79d3dc628b9.webp"
+            "custom_collection_image": "shopify://shop_images/haze_studio_02c8fc98-0519-4090-a52f-d0258080f7a5.webp"
           }
         },
         "collection_Xy6tbx": {
@@ -599,13 +599,14 @@
         "heading_j4Deep": {
           "type": "heading",
           "settings": {
-            "heading": "CANVAS AT STUDIO",
+            "heading": "HAZE STUDIO",
             "heading_style": "page-title",
             "heading_tag": "h2"
           }
         },
         "text_QDdGQt": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p><em><strong>Live Now</strong></em></p>",
             "text_style": "subheading-font"
@@ -622,7 +623,7 @@
         "target_blank": false,
         "overlap": "disable",
         "content_on_hover": false,
-        "first_image": "shopify://shop_images/WEB_BANNER_DESKTOP_d71d73cb-ad4c-412e-8520-e13ba36e9570.jpg",
+        "first_image": "shopify://shop_images/featured_148043c5-de7d-4584-aecf-de589d9096f4.webp",
         "desktop_height_type": "pixels",
         "desktop_pixels_height": 720,
         "center_text": false,
