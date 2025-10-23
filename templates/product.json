@@ -127,6 +127,7 @@
         },
         "inventory_status_btP6qR": {
           "type": "inventory_status",
+          "disabled": true,
           "settings": {
             "show_label": false,
             "show_transfer": true,
