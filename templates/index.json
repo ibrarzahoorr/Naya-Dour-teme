@@ -28,7 +28,7 @@
       "settings": {
         "link": "shopify://collections/winter-25-men",
         "target_blank": false,
-        "overlap": "enable",
+        "overlap": "disable",
         "content_on_hover": false,
         "desktop_height_type": "pixels",
         "desktop_pixels_height": 600,
