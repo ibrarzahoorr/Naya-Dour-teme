@@ -180,23 +180,7 @@
         "menu_4LjrMb": {
           "type": "menu",
           "settings": {
-            "heading": "Heading",
-            "menu": "footer",
-            "menu_orientation": "column",
-            "link_style": "body-font",
-            "uppercase": false,
-            "bolder_font": false,
-            "desktop_width": 100,
-            "center_text": false,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "flex-start",
-            "desktop_padding": 0
-          }
-        },
-        "menu_UraJTY": {
-          "type": "menu",
-          "settings": {
-            "heading": "Heading",
+            "heading": "Menu",
             "menu": "footer",
             "menu_orientation": "column",
             "link_style": "body-font",
@@ -212,8 +196,24 @@
         "menu_jaxPJy": {
           "type": "menu",
           "settings": {
-            "heading": "Heading",
-            "menu": "footer",
+            "heading": "Customer Service",
+            "menu": "footer-cutomer-service",
+            "menu_orientation": "column",
+            "link_style": "body-font",
+            "uppercase": false,
+            "bolder_font": false,
+            "desktop_width": 100,
+            "center_text": false,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "flex-start",
+            "desktop_padding": 0
+          }
+        },
+        "menu_UraJTY": {
+          "type": "menu",
+          "settings": {
+            "heading": "Store Location",
+            "menu": "footer-store-location",
             "menu_orientation": "column",
             "link_style": "body-font",
             "uppercase": false,
@@ -300,8 +300,8 @@
       "block_order": [
         "context_image_P68iWD",
         "menu_4LjrMb",
-        "menu_UraJTY",
         "menu_jaxPJy",
+        "menu_UraJTY",
         "social_media_PnfJHp",
         "localization_HVYYdf",
         "text_hgRfAz",
