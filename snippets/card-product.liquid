@@ -353,23 +353,24 @@
                     {% endif %}
                     {% if settings.show_badge_sale %}
                         {% if card_product.available and card_product.selected_or_first_available_variant.compare_at_price > card_product.selected_or_first_available_variant.price %}
-                            {% liquid 
-                                assign target = card_product                              
-                                if settings.show_selected_variant_value == true
-                                    assign target = card_product.selected_or_first_available_variant
-                                endif
+  {% liquid 
+    assign target = card_product                              
+    if settings.show_selected_variant_value == true
+      assign target = card_product.selected_or_first_available_variant
+    endif
 
-                                case settings.sale_badge_style
-                                    when 'percentage'
-                                        assign discount = target.compare_at_price | minus: target.price 
-                                        assign discount_percent = discount | times: 100 | divided_by: target.compare_at_price
-                                        assign sale_badge = discount_percent | round | prepend: '-' | append: '%'
-                                    when 'text'
-                                        assign sale_badge = 'products.product.badges.sale_badge' | t
-                                endcase
-                            %}
-                            <span {% if settings.sale_badge_style == 'percentage' %}dir="ltr"{% endif %} class="card__badges-item card__badges-item--sale">{{ sale_badge }}</span>
-                        {% endif %}
+    assign discount = target.compare_at_price | minus: target.price 
+    assign discount_percent = discount | times: 100 | divided_by: target.compare_at_price
+    assign discount_percent = discount_percent | round
+
+    assign sale_text = 'products.product.badges.sale_badge' | t
+  %}
+
+  <span dir="ltr" class="card__badges-item card__badges-item--sale">
+    {{ sale_text }} -{{ discount_percent }}%
+  </span>
+{% endif %}
+
                     {% endif %}
                     {% if settings.show_badge_sold %}
                         {% unless card_product.available %}
