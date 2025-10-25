@@ -355,7 +355,7 @@
       },
       "background-5": {
         "settings": {
-          "layout_background_color": "#D4D4D4",
+          "layout_background_color": "#d4d4d4",
           "layout_background_gradient": "",
           "layout_text_color": "#f9f7f7",
           "layout_link_color": "#dd1d1d",
@@ -363,7 +363,7 @@
           "layout_highlighted_background": "#ffff00",
           "overlay_color": "#000000",
           "overlay_gradient": "",
-          "button_background_color": "#FFFFFF",
+          "button_background_color": "#ffffff",
           "button_label_color": "#000000",
           "button_hover_color": "#414141",
           "popover_background_color": "#ffffff",
@@ -1631,5 +1631,11 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".menu__item:nth-child(12) span {color: red; font-weight: bold; animation: pulseBlink 1.2s infinite;}",
+      "/* Keyframes for pulsing and blinking effect */@keyframes pulseBlink {0% {transform: scale(1); opacity: 1; } 50% {transform: scale(1.1); opacity: 0.7; } 100% {transform: scale(1); opacity: 1; }}"
+    ]
   }
 }
