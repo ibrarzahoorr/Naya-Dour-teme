@@ -10,6 +10,8 @@
   Usage:
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
+{% render 'alif-installment' , price:product.price , compare_at_price:product.compare_at_price , isCart:false %}
+
 
 <div class="buy-buttons-block body-font {% if settings.uppercase_body %}uppercase{% endif %}" style="--spacing: {{ block.settings.top_spacing }};--mobile-spacing: {{ block.settings.mobile_top_spacing }};" {{ block.shopify_attributes }}>
   {% style %}
