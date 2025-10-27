@@ -8,6 +8,343 @@
     "theme_support_url": "https:\/\/staylime.zendesk.com\/hc\/en-us\/requests\/new"
   },
   {
+        "name": "Alif Installment Plan",
+        "settings": [
+            {
+                "type": "header",
+                "content": "Logo"
+            },
+            {
+                "type": "range",
+                "label": "Logo Width Product",
+                "id": "alif_logo_width_product",
+                "unit": "px",
+                "min": 20,
+                "max": 200,
+                "step": 2,
+                "default": 30
+            },
+            {
+                "type": "range",
+                "label": "Logo Height Product ",
+                "id": "alif_logo_height_product",
+                "unit": "px",
+                "min": 20,
+                "max": 200,
+                "step": 2,
+                "default": 30
+            },
+            {
+                "type": "range",
+                "label": "Mobile Logo Width Product ",
+                "id": "mb_alif_logo_width_product",
+                "unit": "px",
+                "min": 20,
+                "max": 200,
+                "step": 2,
+                "default": 30
+            },
+            {
+                "type": "range",
+                "label": "Mobile Logo Height Product ",
+                "id": "mb_alif_logo_height_product",
+                "unit": "px",
+                "min": 20,
+                "max": 200,
+                "step": 2,
+                "default": 30
+            },
+            {
+                "type": "range",
+                "label": "Logo Width Cart",
+                "id": "alif_logo_width_cart",
+                "unit": "px",
+                "min": 20,
+                "max": 200,
+                "step": 2,
+                "default": 30
+            },
+            {
+                "type": "range",
+                "label": "Logo Height Cart ",
+                "id": "alif_logo_height_cart",
+                "unit": "px",
+                "min": 20,
+                "max": 200,
+                "step": 2,
+                "default": 30
+            },
+            {
+                "type": "range",
+                "label": "Mobile Logo Width Cart ",
+                "id": "mb_alif_logo_width_cart",
+                "unit": "px",
+                "min": 20,
+                "max": 200,
+                "step": 2,
+                "default": 30
+            },
+            {
+                "type": "range",
+                "label": "Mobile Logo Height Cart ",
+                "id": "mb_alif_logo_height_cart",
+                "unit": "px",
+                "min": 20,
+                "max": 200,
+                "step": 2,
+                "default": 30
+            },
+            {
+                "type": "number",
+                "id": "discount_threshold_alif",
+                "label": "Discount Threshold (%)",
+                "default": 30
+            },
+            {
+                "type": "header",
+                "content": "Typography"
+            },
+            {
+                "type": "text",
+                "id": "installment_text",
+                "label": "Installment Text",
+                "default": "Pay in 3 Installments of "
+            },
+            {
+                "type": "range",
+                "id": "font_size_alif",
+                "min": 12,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Font size",
+                "default": 16
+            },
+            {
+                "type": "range",
+                "id": "font_size_mb",
+                "min": 12,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Mobile Font size",
+                "default": 16
+            },
+            {
+                "type": "color",
+                "id": "color_text_alif",
+                "label": "Text Color",
+                "default": "#000000"
+            },
+            {
+                "type": "select",
+                "id": "alif_font_weight_product",
+                "label": "Font Weight",
+                "default": "400",
+                "options": [
+                    {
+                        "value": "100",
+                        "label": "Thin (100)"
+                    },
+                    {
+                        "value": "200",
+                        "label": "Extra Light (200)"
+                    },
+                    {
+                        "value": "300",
+                        "label": "Light (300)"
+                    },
+                    {
+                        "value": "400",
+                        "label": "Normal (400)"
+                    },
+                    {
+                        "value": "500",
+                        "label": "Medium (500)"
+                    },
+                    {
+                        "value": "600",
+                        "label": "Semi Bold (600)"
+                    },
+                    {
+                        "value": "700",
+                        "label": "Bold (700)"
+                    },
+                    {
+                        "value": "800",
+                        "label": "Extra Bold (800)"
+                    },
+                    {
+                        "value": "900",
+                        "label": "Black (900)"
+                    }
+                ]
+            },
+            {
+                "type": "header",
+                "content": "Spacing"
+            },
+            {
+                "type": "range",
+                "id": "margin_top_alif",
+                "min": 0,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Spacing Top",
+                "default": 0
+            },
+            {
+                "type": "range",
+                "id": "margin_bottom_alif",
+                "min": 0,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Spacing Bottom",
+                "default": 0
+            },
+            {
+                "type": "range",
+                "id": "margin_top_mb",
+                "min": 0,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Mobile Spacing Top",
+                "default": 0
+            },
+            {
+                "type": "range",
+                "id": "margin_bottom_mb",
+                "min": 0,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Mobile Spacing Bottom",
+                "default": 0
+            },
+            {
+                "type": "header",
+                "content": "Typography Cart"
+            },
+            {
+                "type": "range",
+                "id": "font_cart",
+                "min": 12,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Font size",
+                "default": 16
+            },
+            {
+                "type": "range",
+                "id": "font_cart_mb",
+                "min": 12,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Mobile Font size",
+                "default": 16
+            },
+            {
+                "type": "select",
+                "id": "alif_font_weight_cart",
+                "label": "Font Weight",
+                "default": "400",
+                "options": [
+                    {
+                        "value": "100",
+                        "label": "Thin (100)"
+                    },
+                    {
+                        "value": "200",
+                        "label": "Extra Light (200)"
+                    },
+                    {
+                        "value": "300",
+                        "label": "Light (300)"
+                    },
+                    {
+                        "value": "400",
+                        "label": "Normal (400)"
+                    },
+                    {
+                        "value": "500",
+                        "label": "Medium (500)"
+                    },
+                    {
+                        "value": "600",
+                        "label": "Semi Bold (600)"
+                    },
+                    {
+                        "value": "700",
+                        "label": "Bold (700)"
+                    },
+                    {
+                        "value": "800",
+                        "label": "Extra Bold (800)"
+                    },
+                    {
+                        "value": "900",
+                        "label": "Black (900)"
+                    }
+                ]
+            },
+            {
+                "type": "header",
+                "content": "Spacing Cart"
+            },
+            {
+                "type": "range",
+                "id": "mt_cart",
+                "min": 0,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Top Spacing",
+                "default": 0
+            },
+            {
+                "type": "range",
+                "id": "mb_cart",
+                "min": 0,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Bottom Spacing",
+                "default": 0
+            },
+            {
+                "type": "range",
+                "id": "mt_cart_mb",
+                "min": 0,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Mobile Top Spacing",
+                "default": 0
+            },
+            {
+                "type": "range",
+                "id": "mb_cart_mb",
+                "min": 0,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Mobile Bottom Spacing",
+                "default": 0
+            },
+            {
+                "type": "textarea",
+                "id": "alif_custom_css",
+                "label": "Custom CSS",
+                "default": "p{}"
+            }
+        ]
+    },
+  {
     "name": "t:settings_schema.colors.name",
     "settings": [
       {
