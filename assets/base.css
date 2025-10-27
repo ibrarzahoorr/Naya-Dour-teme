@@ -3784,6 +3784,7 @@ product-recommendations {
     display: flex;
     align-items: center;
     cursor: pointer;
+    display: none;
     
 }
 
