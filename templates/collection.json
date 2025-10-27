@@ -67,7 +67,7 @@
         "preview_products_per_page": 12,
         "preview_grid_desktop_columns": 12,
         "preview_grid_mobile_columns": "4",
-        "enable_filtering": true,
+        "enable_filtering": false,
         "filter_type": "horizontal",
         "drawer_position": "right",
         "drawer_button_label": "Filter Products",
