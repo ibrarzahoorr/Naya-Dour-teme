@@ -64,7 +64,7 @@
         "secondary_products_per_page": 12,
         "secondary_grid_desktop_columns": "5",
         "enable_preview_grid": false,
-        "preview_products_per_page": 12,
+        "preview_products_per_page": 24,
         "preview_grid_desktop_columns": 12,
         "preview_grid_mobile_columns": "4",
         "enable_filtering": false,
