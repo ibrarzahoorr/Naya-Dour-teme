@@ -337,6 +337,7 @@
                           <div class="price-block {% if hide_price and block.settings.hide_shipping_note %}price-block-hidden{% endif %}{% if hide_price %} price-block-hidden-price{% endif %}{% if hide_price and block.settings.hide_shipping_note and block.settings.show_badges == false %} price-block-hidden-no-badges{% endif %}" id="price-{{ section.id }}" role="status">
                             <div class="price-block__price {{ block.settings.price_style }}{% if block.settings.price_style == 'subheading-font' and settings.use_heading_font_subheadings %} subheading-heading-font{% endif %}">
                               {%- render 'price', product: product, use_variant: true, price_style: true, block: block, show_badges: block.settings.show_badges, bold_price: bold_price, use_accent_color_for_price: settings.use_accent_color_for_price, compare_at_price_color: block.settings.compare_at_price_color, parent_product_card: false, badge_style: block.settings.text_style, uppercase_text: uppercase_text -%}
+                              {% render 'alif-installment' , price:product.price , compare_at_price:product.compare_at_price , isCart:false %}
                             </div>
                           </div>
                         </div>
