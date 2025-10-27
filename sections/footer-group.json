@@ -107,6 +107,21 @@
         "bottom_spacing": 0
       }
     },
+    "custom_liquid_CCiDhY": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.name",
+      "settings": {
+        "custom_liquid": "<!-- Social Icons Section -->\n<div class=\"social-section\">\n  <nav class=\"social-icons\" aria-label=\"Social media links\">\n    <a class=\"facebook\" href=\"#\" target=\"_blank\" rel=\"noopener\" aria-label=\"Facebook\" title=\"Facebook\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"white\" d=\"M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5c0-2.5 1.5-3.9 3.8-3.9c1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5V12H17l-.5 3h-2.7v7A10 10 0 0 0 22 12\"/></svg>\n    </a>\n\n    <a class=\"instagram\" href=\"#\" target=\"_blank\" rel=\"noopener\" aria-label=\"Instagram\" title=\"Instagram\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"white\" d=\"M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.3A4.7 4.7 0 0 0 7.3 12 4.7 4.7 0 0 0 12 16.7 4.7 4.7 0 0 0 16.7 12 4.7 4.7 0 0 0 12 7.3zm0 2A2.7 2.7 0 0 1 14.7 12 2.7 2.7 0 0 1 12 14.7 2.7 2.7 0 0 1 9.3 12 2.7 2.7 0 0 1 12 9.3zm4.8-2.6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z\"/></svg>\n    </a>\n\n    <a class=\"linkedin\" href=\"#\" target=\"_blank\" rel=\"noopener\" aria-label=\"LinkedIn\" title=\"LinkedIn\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"white\" d=\"M4.98 3.5A2.5 2.5 0 1 0 5 8.5 2.5 2.5 0 0 0 4.98 3.5zM3 9h4v12H3zM9 9h3.6v1.6h.1a4 4 0 0 1 3.6-2c3.8 0 4.5 2.4 4.5 5.5V21h-4v-5.5c0-1.3 0-3-2-3s-2.3 1.5-2.3 3V21H9z\"/></svg>\n    </a>\n\n    <a class=\"pinterest\" href=\"#\" target=\"_blank\" rel=\"noopener\" aria-label=\"Pinterest\" title=\"Pinterest\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"white\" d=\"M12 2C6.5 2 2 6.3 2 11.8c0 4 2.3 7.3 5.6 8.9c-.1-.8-.1-2 0-2.8l1.1-4.7s-.3-.6-.3-1.5c0-1.4.8-2.4 1.8-2.4c.8 0 1.1.6 1.1 1.3c0 .8-.5 2.1-.8 3.3c-.2.9.5 1.6 1.4 1.6c1.7 0 3-1.8 3-4.5c0-2.3-1.7-3.9-4.2-3.9c-2.9 0-4.7 2.2-4.7 4.4c0 .9.3 1.9.8 2.4c.1.1.1.2 0 .4l-.3 1.1c0 .1-.1.2-.2.1c-.9-.4-1.5-1.7-1.5-3c0-2.3 1.9-5 5.6-5c3 0 5 2.2 5 4.5c0 3.1-1.7 5.4-4.2 5.4c-.8 0-1.5-.4-1.7-.8l-.5 2c-.2.7-.8 1.7-1.2 2.2c.9.3 1.9.4 3 .4c5.5 0 10-4.3 10-9.8C22 6.3 17.5 2 12 2z\"/></svg>\n    </a>\n  </nav>\n</div>\n\n<!-- Scoped CSS -->\n<style>\n  .social-section {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 12px;\n    padding: 10px 0;\n  }\n\n  .social-section .social-icons {\n    display: flex;\n    gap: 12px;\n  }\n\n  .social-section .social-icons a {\n    width: 45px;\n    height: 45px;\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    border-radius: 50%;\n    text-decoration: none;\n    transition: transform 0.2s ease, box-shadow 0.2s ease;\n  }\n\n  .social-section .social-icons a:hover {\n    transform: translateY(-4px);\n    box-shadow: 0 6px 14px rgba(0,0,0,0.2);\n  }\n\n  .social-section svg {\n    width: 22px;\n    height: 22px;\n  }\n\n  .social-section .facebook { background-color: #1877F2; }\n  .social-section .instagram {\n    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);\n  }\n  .social-section .linkedin { background-color: #0A66C2; }\n  .social-section .pinterest { background-color: #E60023; }\n\n  @media (max-width: 480px) {\n    .social-section .social-icons a {\n      width: 38px;\n      height: 38px;\n    }\n    .social-section svg {\n      width: 18px;\n      height: 18px;\n    }\n  }\n</style>",
+        "text_style": "body-font",
+        "grid_style": "page",
+        "disable_max_width": false,
+        "show_bottom_line": false,
+        "color_scheme": "",
+        "section_framing": "disable",
+        "top_spacing": 0,
+        "bottom_spacing": 0
+      }
+    },
     "advantages_EnUYzd": {
       "type": "advantages",
       "blocks": {
@@ -340,6 +355,7 @@
   },
   "order": [
     "social_grid_WqREmt",
+    "custom_liquid_CCiDhY",
     "advantages_EnUYzd",
     "footer",
     "legal"
