@@ -1,0 +1,58 @@
+
+
+.alif-gateway-wrapper {
+  display: block;
+  border: 1px solid #d3d3d3;
+  border-radius: 3px;
+  text-align: left;
+  padding: 10px;
+}
+
+.alif-para.main-cart-baadway {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.alif-price {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.alif-gateway-wrapper .baadmay-para {
+  opacity: 0.9;
+}
+
+.alif-para {
+  display: flex;
+  align-items: flex-start;
+}
+
+.doto {
+  padding-right: 3px;
+}
+
+svg.alifsvg {
+  width: 120px;
+  height: 30px;
+  fill: none;
+  stroke: none;
+  vertical-align: top;
+}
+
+.alif-gateway-wrapper .baadmay-price {
+  display: flex;
+  padding-left: 5px;
+  align-items: flex-start;
+}
+
+.alif-gateway-wrapper .alif-para p,
+.alif-gateway-wrapper .alif-price .alif-currency {
+  margin: 0;
+}
+
+.alif-price-divide {
+  color: #00af66;
+}
