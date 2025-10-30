@@ -561,102 +561,55 @@ src="https://www.facebook.com/tr?id=1283369679913533&ev=PageView&noscript=1"
 
 
 
-<!-- Auto-apply discount when visitor comes from /discount/CODE?redirect=... -->
+<!-- Auto apply discount for Winter-25 collection products -->
 <script>
 (function() {
-  // Helper: get query param
-  function getQueryParam(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[[]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  // 🔹 Your discount code
+  var discountCode = "WINTER25";
+
+  // 🔹 Function to add discount when going to checkout
+  function applyDiscountToCheckout() {
+    var checkoutUrl = "/checkout?discount=" + encodeURIComponent(discountCode);
+    window.location.href = checkoutUrl;
   }
 
-  // Extract discount code from /discount/CODE or ?discount=CODE
-  function extractDiscountFromPathOrQuery() {
-    var path = window.location.pathname || '';
-    var match = path.match(/^\/discount\/([^\/\?]+)/i);
-    if (match && match[1]) return decodeURIComponent(match[1]);
-    var q = getQueryParam('discount');
-    return q;
+  // 🔹 Save discount in localStorage (so it works even after navigating away)
+  function saveDiscount() {
+    try { localStorage.setItem("active_discount", discountCode); } catch(e){}
   }
 
-  // Safe redirect (avoid infinite loops): append discount only if not present already
-  function goToCheckoutWithDiscount(code) {
-    var current = window.location.href;
-    if (current.indexOf('checkout') !== -1) {
-      // if already on checkout but no discount param, add it
-      if (getQueryParam('discount') !== code) {
-        var newUrl = window.location.origin + '/checkout?discount=' + encodeURIComponent(code);
-        window.location.replace(newUrl);
-      }
-    } else {
-      // redirect to checkout (will preserve nothing else)
-      window.location.href = '/checkout?discount=' + encodeURIComponent(code);
+  // 🔹 Detect add to cart event (Shopify themes trigger /cart/add.js)
+  document.addEventListener("submit", function(e) {
+    var form = e.target;
+    if (form && form.action && form.action.includes("/cart/add")) {
+      // User added a product to cart
+      saveDiscount();
+
+      // Wait for product to be added to cart, then go to checkout with discount
+      setTimeout(function() {
+        applyDiscountToCheckout();
+      }, 1500); // delay to allow Shopify to process add-to-cart
     }
-  }
+  }, true);
 
-  // On page load: main logic
-  var codeFromURL = extractDiscountFromPathOrQuery();
-  var redirectParam = getQueryParam('redirect');
-
-  if (codeFromURL) {
-    // store code in localStorage so later visits /checkout apply it
-    try { localStorage.setItem('shop_discount_code', codeFromURL); } catch(e){}
-
-    // Check cart contents first
-    fetch('/cart.js', { credentials: 'same-origin' })
-      .then(function(r){ return r.json(); })
-      .then(function(cart){
-        var itemsCount = (cart && cart.items) ? cart.items.length : 0;
-        if (itemsCount > 0) {
-          // go straight to checkout with discount
-          goToCheckoutWithDiscount(codeFromURL);
-        } else {
-          // cart empty: send user to redirect page (if provided), else to collection or home
-          if (redirectParam) {
-            // ensure redirectParam is an absolute path (starts with '/')
-            var dest = redirectParam;
-            try {
-              dest = decodeURIComponent(redirectParam);
-            } catch(e){}
-            // if dest doesn't include discount param, we keep discount in localStorage for later
-            window.location.replace(dest);
-          } else {
-            // fallback: send to home or keep them where they are
-            // we will just keep them on page but store discount in localStorage
-            // Optionally show a small message (uncomment to use)
-            // alert('Discount code saved — it will be applied at checkout: ' + codeFromURL);
-          }
+  // 🔹 If user is on checkout/cart and we have a saved discount, apply it automatically
+  (function checkExistingDiscount() {
+    var path = window.location.pathname;
+    if ((/checkout|cart/i).test(path)) {
+      try {
+        var saved = localStorage.getItem("active_discount");
+        if (saved && window.location.search.indexOf("discount=") === -1) {
+          window.location.replace("/checkout?discount=" + encodeURIComponent(saved));
         }
-      })
-      .catch(function(err){
-        // if cart check fails, fallback to redirect to checkout with discount
-        console.warn('Cart check failed, redirecting to checkout with discount', err);
-        goToCheckoutWithDiscount(codeFromURL);
-      });
-
-    return;
-  }
-
-  // If no code in URL, check if we have a saved code in localStorage and user is going to checkout/cart
-  try {
-    var saved = localStorage.getItem('shop_discount_code');
-    if (saved) {
-      // If user is on a checkout/cart page and discount not present -> add it
-      var path = window.location.pathname || '';
-      var isCheckoutOrCart = /(^\/checkout)|(^\/cart)/i.test(path);
-      if (isCheckoutOrCart && getQueryParam('discount') !== saved) {
-        // If on /cart, redirect to /checkout with discount (or you might want to keep them on cart and append ?discount=)
-        // We'll redirect to checkout to ensure discount applied
-        window.location.replace('/checkout?discount=' + encodeURIComponent(saved));
-      }
+      } catch(e){}
     }
-  } catch(e){ /* ignore localStorage errors */ }
+  })();
 
+  // 🔹 Optional: only run this logic on the winter collection page
+  if (window.location.pathname.includes("/collections/winter-25")) {
+    saveDiscount();
+    console.log("Winter25 discount ready!");
+  }
 })();
 </script>
 
