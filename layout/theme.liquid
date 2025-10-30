@@ -561,55 +561,59 @@ src="https://www.facebook.com/tr?id=1283369679913533&ev=PageView&noscript=1"
 
 
 
-<!-- Auto apply discount for Winter-25 collection products -->
+<!-- Auto apply 25% discount for products tagged "winter-25" -->
 <script>
 (function() {
-  // 🔹 Your discount code
-  var discountCode = "WINTER25";
+  var discountCode = "WINTER25"; // <-- Replace with your actual discount code
 
-  // 🔹 Function to add discount when going to checkout
-  function applyDiscountToCheckout() {
-    var checkoutUrl = "/checkout?discount=" + encodeURIComponent(discountCode);
-    window.location.href = checkoutUrl;
-  }
-
-  // 🔹 Save discount in localStorage (so it works even after navigating away)
+  // Function to save discount code locally
   function saveDiscount() {
-    try { localStorage.setItem("active_discount", discountCode); } catch(e){}
+    try {
+      localStorage.setItem("auto_discount", discountCode);
+    } catch(e) {}
   }
 
-  // 🔹 Detect add to cart event (Shopify themes trigger /cart/add.js)
+  // Function to redirect to checkout with discount
+  function goToCheckoutWithDiscount() {
+    var url = "/checkout?discount=" + encodeURIComponent(discountCode);
+    window.location.href = url;
+  }
+
+  // Detect add-to-cart for any product with tag 'winter-25'
   document.addEventListener("submit", function(e) {
     var form = e.target;
     if (form && form.action && form.action.includes("/cart/add")) {
-      // User added a product to cart
-      saveDiscount();
+      var formData = new FormData(form);
+      var productId = formData.get("id");
 
-      // Wait for product to be added to cart, then go to checkout with discount
-      setTimeout(function() {
-        applyDiscountToCheckout();
-      }, 1500); // delay to allow Shopify to process add-to-cart
+      // Fetch product data to verify tag
+      fetch(window.Shopify.routes.root + "products.json?limit=250")
+        .then(r => r.json())
+        .then(data => {
+          var productFound = data.products.find(p =>
+            p.variants.some(v => v.id == productId)
+          );
+          if (productFound && productFound.tags.includes("winter-25")) {
+            saveDiscount();
+            setTimeout(goToCheckoutWithDiscount, 1500);
+          }
+        })
+        .catch(err => console.warn("Discount check failed", err));
     }
   }, true);
 
-  // 🔹 If user is on checkout/cart and we have a saved discount, apply it automatically
-  (function checkExistingDiscount() {
+  // If user is on checkout or cart and discount was saved earlier, auto apply it
+  (function autoApplySavedDiscount() {
     var path = window.location.pathname;
-    if ((/checkout|cart/i).test(path)) {
+    if (/checkout|cart/i.test(path)) {
       try {
-        var saved = localStorage.getItem("active_discount");
-        if (saved && window.location.search.indexOf("discount=") === -1) {
+        var saved = localStorage.getItem("auto_discount");
+        if (saved && !window.location.search.includes("discount=")) {
           window.location.replace("/checkout?discount=" + encodeURIComponent(saved));
         }
       } catch(e){}
     }
   })();
-
-  // 🔹 Optional: only run this logic on the winter collection page
-  if (window.location.pathname.includes("/collections/winter-25")) {
-    saveDiscount();
-    console.log("Winter25 discount ready!");
-  }
 })();
 </script>
 
