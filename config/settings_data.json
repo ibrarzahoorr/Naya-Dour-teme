@@ -205,6 +205,7 @@
     "badge_name_1": "New",
     "badge_background_1": "#000000",
     "currency_code_enabled": false,
+    "favicon": "shopify://shop_images/naya_dour_logo_White.png",
     "share_on_facebook": true,
     "share_on_x": true,
     "share_on_pinterest": true,
