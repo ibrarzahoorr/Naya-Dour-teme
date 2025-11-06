@@ -97,7 +97,7 @@
         "logo_UXh8R3"
       ],
       "custom_css": [
-        "a.link-sale[data-title=\"11.11 SALE\"] {color: red !important; font-weight: 700; animation: blinkSale 1s infinite alternate; text-decoration: none; display: inline-block;}"
+        "[class*=\"sale\" i] {color: red !important; font-weight: 700; animation: blinkSale 1s infinite alternate;}"
       ],
       "settings": {
         "header_layout": "logo_center_menu_left",
