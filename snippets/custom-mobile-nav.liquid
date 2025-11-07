@@ -1,66 +1,198 @@
 <div id="CustomMobileNav" class="custom-mobile-nav">
   <div class="custom-mobile-nav__scroller">
     <div class="custom-mobile-nav__header">
-      <button class="custom-mobile-nav__header-btn custom-mobile-nav__back-btn" style="display: none;">{% render 'icon-chevron-left' %}</button>
+      <button class="custom-mobile-nav__header-btn custom-mobile-nav__back-btn" style="display: none;">
+        {% render 'icon-chevron-left' %}
+      </button>
+      <div class="custom-mobile-nav__header-logo">
+        <img src="https://cdn.shopify.com/s/files/1/0936/8820/1518/files/Zarr_Web_Logo.png?v=1756992136" alt="ZARR Logo" loading="lazy">
+      </div>
       <h3 class="custom-mobile-nav__title"></h3>
-      <button class="custom-mobile-nav__header-btn custom-mobile-nav__close-btn">{% render 'icon-x' %}</button>
+      <button class="custom-mobile-nav__header-btn custom-mobile-nav__close-btn">
+        {% render 'icon-x' %}
+      </button>
     </div>
 
     <div class="custom-mobile-nav__level" data-level="1">
       <div class="custom-mobile-nav__tabs">
-        {%- comment -%} Dynamically generate tabs from the 'top-level-category' menu {%- endcomment -%}
-        {% for link in linklists.top-level-category.links %}
-          <button class="custom-mobile-nav__tab-btn" data-menu-handle="{{ link.handle }}">{{ link.title }}</button>
-        {% endfor %}
+        <button class="custom-mobile-nav__tab-btn" data-menu-handle="mobile-nav-women">Women</button>
+        <button class="custom-mobile-nav__tab-btn" data-menu-handle="mobile-nav-men">Men</button>
+        <button class="custom-mobile-nav__tab-btn" data-menu-handle="mobile-nav-kids">Kids</button>
+        <a href="https://social.myzarr.com/" class="custom-mobile-nav__tab-btn">Social</a>
       </div>
 
       <div class="custom-mobile-nav__panels">
-        {%- comment -%} Dynamically generate panels for each tab {%- endcomment -%}
-        {% for link in linklists.top-level-category.links %}
-          {% assign panel_menu_handle = link.handle %}
-          <div class="custom-mobile-nav__panel" data-menu-handle="{{ panel_menu_handle }}">
-            <div class="custom-mobile-nav__grid">
-              {% for sub_link in linklists[panel_menu_handle].links %}
-                <a href="{{ sub_link.url }}" class="custom-mobile-nav__grid-item" data-title="{{ sub_link.title | escape }}" {% if sub_link.links != blank %}data-has-submenu="true"{% endif %}>
-                  <span class="custom-mobile-nav__grid-item-title">{{ sub_link.title }}</span>
-                </a>
-                {% if sub_link.links != blank %}
-                  <div class="custom-mobile-nav__submenu-data" style="display: none;">
-                    <div class="submenu-grid-wrapper">
-                      <div class="custom-mobile-nav__grid">
-                        {% for child_link in sub_link.links %}
-                          <a href="{{ child_link.url }}" class="custom-mobile-nav__grid-item" data-title="{{ child_link.title | escape }}" {% if child_link.links != blank %}data-has-submenu="true"{% endif %}>
-                            <span class="custom-mobile-nav__grid-item-title">{{ child_link.title }}</span>
-                          </a>
-                          {% if child_link.links != blank %}
-                            <div class="custom-mobile-nav__submenu-data" style="display: none;">
-                              <div class="submenu-grid-wrapper">
-                                <div class="custom-mobile-nav__grid">
-                                  {% for grandchild_link in child_link.links %}
-                                    <a href="{{ grandchild_link.url }}" class="custom-mobile-nav__grid-item" data-title="{{ grandchild_link.title | escape }}">
-                                      <span class="custom-mobile-nav__grid-item-title">{{ grandchild_link.title }}</span>
-                                    </a>
-                                  {% endfor %}
-                                </div>
-                              </div>
-                            </div>
-                          {% endif %}
-                        {% endfor %}
-                      </div>
-                    </div>
-                  </div>
-                {% endif %}
-              {% endfor %}
+        {% assign main_menus = 'mobile-nav-women,mobile-nav-men,mobile-nav-kids' | split: ',' %}
+        {% for menu_handle in main_menus %}
+          <div class="custom-mobile-nav__panel" data-menu-handle="{{ menu_handle }}">
+            
+            {% comment %} RENDER THE RECURSIVE MENU {% endcomment %}
+            {% render 'mobile-nav-recursive-links', links: linklists[menu_handle].links %}
+            
+            {% comment %} <hr class="nav-divider"> {% endcomment %}
+            
+            <div class="custom-mobile-nav__brands">
+              <div class="custom-mobile-nav__brands-header">
+                <h4 class="custom-mobile-nav__section-title">Top Brands</h4>
+              </div>
+              <div class="custom-mobile-nav__grid custom-mobile-nav__grid--brands">
+                {%- assign category = menu_handle | replace: 'mobile-nav-', '' -%}
+                {%- assign brands_menu_handle = 'top-brands-' | append: category -%}
+                {%- assign brands_menu = linklists[brands_menu_handle] -%}
+                
+                {%- comment -%} 
+                  If a menu exists for this category's brands, use it.
+                  Otherwise, fall back to conditional logic below.
+                {%- endcomment -%}
+                
+                {%- if brands_menu.links.size > 0 -%}
+                  {%- comment -%} Use Shopify menu system {%- endcomment -%}
+                  {%- for link in brands_menu.links -%}
+                    {%- assign brand_image_url = '' -%}
+                    {%- assign brand_alt = link.title | escape -%}
+                    
+                    {%- comment -%} Check if link object has an image (collection or page) {%- endcomment -%}
+                    {%- if link.object.image -%}
+                      {%- assign brand_image_url = link.object.image | image_url: width: 200 -%}
+                      {%- assign brand_alt = link.object.image.alt | default: link.title | escape -%}
+                    {%- elsif link.object.featured_image -%}
+                      {%- assign brand_image_url = link.object.featured_image | image_url: width: 200 -%}
+                      {%- assign brand_alt = link.object.featured_image.alt | default: link.title | escape -%}
+                    {%- elsif link.object.metafields.custom.brand_image -%}
+                      {%- assign brand_image_url = link.object.metafields.custom.brand_image -%}
+                    {%- endif -%}
+                    
+                    {%- comment -%} Render brand item if we have an image URL {%- endcomment -%}
+                    {%- if brand_image_url != '' -%}
+                      <a href="{{ link.url }}" class="custom-mobile-nav__brand-item">
+                        <img src="{{ brand_image_url }}" alt="{{ brand_alt }}" loading="lazy">
+                      </a>
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- else -%}
+                  {%- comment -%} 
+                    HARDCODED TOP BRANDS BY CATEGORY
+                    To update brand images:
+                    1. Replace the image URL in the src attribute
+                    2. Update the alt text with the brand name
+                    3. Update the href URL if the brand should link to a specific page
+                    
+                    You can add or remove brand items as needed.
+                    Each brand should have its own <a> tag with class "custom-mobile-nav__brand-item"
+                  {%- endcomment -%}
+                  
+                  {%- if category == 'women' -%}
+                    {%- comment -%} TOP BRANDS FOR WOMEN {%- endcomment -%}
+                    {%- assign brand_url = routes.pages_url | append: '/brands' -%}
+                    <a href="https://d0vg0m-dv.myshopify.com/collections/sadaf-fawad-khan-men" class="custom-mobile-nav__brand-item">
+                      <img src="https://cdn.shopify.com/s/files/1/0936/8820/1518/files/Sada_Fawad_Khan_Women_Brand_Logo.png?v=1761990278" alt="Sadaf Fawad Khan">
+                    </a>
+                    <a href="{{ brand_url }}" class="custom-mobile-nav__brand-item">
+                      <img src="https://cdn.shopify.com/s/files/1/0936/8820/1518/files/cross-stitch.png?v=1761982348" alt="Cross Stitch">
+                    </a>
+                    <a href="{{ brand_url }}" class="custom-mobile-nav__brand-item">
+                      <img src="https://cdn.shopify.com/s/files/1/0936/8820/1518/files/Kiji-Logo.png?v=1760800828" alt="Kiji">
+                    </a>
+                    <a href="{{ brand_url }}" class="custom-mobile-nav__brand-item">
+                      <img src="https://cdn.shopify.com/s/files/1/0936/8820/1518/files/beyond-east-logo_1.png?v=1761983039" alt="Beyond East">
+                    </a>
+                    
+                  {%- elsif category == 'men' -%}
+                    {%- comment -%} TOP BRANDS FOR MEN {%- endcomment -%}
+                    {%- assign brand_url = routes.pages_url | append: '/brands' -%}
+                    {%- comment -%} Replace these with Men's brand images {%- endcomment -%}
+                    <a href="https://d0vg0m-dv.myshopify.com/collections/naya-dour-brand" class="custom-mobile-nav__brand-item">
+                      <img src="https://cdn.shopify.com/s/files/1/0936/8820/1518/files/naya-dour-logo-black.png?v=1761982605" alt="Naya Dour">
+                    </a>
+                    <a href="{{ brand_url }}" class="custom-mobile-nav__brand-item">
+                      <img src="https://cdn.shopify.com/s/files/1/0936/8820/1518/files/Bandana-Logo-_-Black.png?v=1761982663" alt="Bandana">
+                    </a>
+                    <a href="{{ brand_url }}" class="custom-mobile-nav__brand-item">
+                      <img src="https://cdn.shopify.com/s/files/1/0936/8820/1518/files/Ismails_Burger_Men_Logo.png?v=1761990624" alt="Ismail's Clothing">
+                    </a>
+                    <a href="{{ brand_url }}" class="custom-mobile-nav__brand-item">
+                      <img src="https://cdn.shopify.com/s/files/1/0936/8820/1518/files/download-removebg-preview.png?v=1761982863" alt="Hussain Rehar">
+                    </a>
+                    
+                  {%- elsif category == 'kids' -%}
+                    {%- comment -%} TOP BRANDS FOR KIDS {%- endcomment -%}
+                    {%- assign brand_url = routes.pages_url | append: '/brands' -%}
+                    {%- comment -%} Replace these with Kids' brand images {%- endcomment -%}
+                    <a href="https://d0vg0m-dv.myshopify.com/collections/rollover-brand" class="custom-mobile-nav__brand-item">
+                      <img src="https://cdn.shopify.com/s/files/1/0936/8820/1518/files/Rollover_Burger_Kids_Logo.png?v=1761991214" alt="Rollover Kids">
+                    </a>
+                    <a href="{{ brand_url }}" class="custom-mobile-nav__brand-item">
+                      <img src="https://cdn.shopify.com/s/files/1/0936/8820/1518/files/Ismails_Burger_Men_Logo.png?v=1761990624" alt="Ismail's Clothing">
+                    </a>
+                    {% comment %} <a href="{{ brand_url }}" class="custom-mobile-nav__brand-item">
+                      <img src="https://cdn.shopify.com/s/files/1/0936/8820/1518/files/sbfkkk.png?v=1761902178" alt="Lama">
+                    </a>
+                    <a href="{{ brand_url }}" class="custom-mobile-nav__brand-item">
+                      <img src="https://swiftstudioz.com//zarr-shopify-images/top-brands-images/mariab.svg" alt="Maria B">
+                    </a> {% endcomment %}
+                    
+                  {%- endif -%}
+                {%- endif -%}
+              </div>
+              <a href="/pages/brands" class="custom-mobile-nav__all-brands-btn">
+                <span>All Brands &rarr;</span>
+              </a>
             </div>
-            
+
+            <hr class="nav-divider">
+
+            <div class="custom-mobile-nav__new-collections">
+              <h4 class="custom-mobile-nav__section-title">Featured Collections</h4>
+              <div class="custom-mobile-nav__new-collections-list">
+                {%- assign category = menu_handle | replace: 'mobile-nav-', '' -%}
+                {%- assign menu_to_loop = 'featured-' | append: category | append: '-collections' -%}
+                {%- assign featured_menu = linklists[menu_to_loop] -%}
+                
+                {%- if featured_menu.links.size > 0 -%}
+                  {%- for link in featured_menu.links -%}
+                    {%- assign new_collection = link.object -%}
+                    {%- if new_collection.image -%}
+                      <a href="{{ new_collection.url }}" class="custom-mobile-nav__card">
+                        <img src="{{ new_collection.image | image_url: width: 800 }}" alt="{{ new_collection.image.alt | default: new_collection.title | escape }}" loading="lazy">
+                        {% comment %} <div class="custom-mobile-nav__card-overlay"><h3>{{ new_collection.title }}</h3></div> {% endcomment %}
+                      </a>
+                    {%- elsif new_collection.featured_image -%}
+                      <a href="{{ new_collection.url }}" class="custom-mobile-nav__card">
+                        <img src="{{ new_collection.featured_image | image_url: width: 800 }}" alt="{{ new_collection.featured_image.alt | default: new_collection.title | escape }}" loading="lazy">
+                        {% comment %} <div class="custom-mobile-nav__card-overlay"><h3>{{ new_collection.title }}</h3></div> {% endcomment %}
+                      </a>
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endif -%}
+              </div>
+            </div>
+
             {% comment %} <hr class="nav-divider">
-            
-            <div class="custom-mobile-nav__brands"></div>
+
+            <div class="custom-mobile-nav__exclusive-links">
+              <h4 class="custom-mobile-nav__section-title">Exclusive with us</h4>
+              <br>
+              <div class="custom-mobile-nav__link-list">
+                {%- for link in linklists['exclusive-links'].links -%}
+                  <a href="{{ link.url }}" class="custom-mobile-nav__link-item">
+                    <span>{{ link.title }}</span>
+                    {% render 'icon-chevron-right' %}
+                  </a>
+                {%- endfor -%}
+              </div>
+            </div> 
+
             <hr class="nav-divider">
-            <div class="custom-mobile-nav__new-collections"></div>
-            <hr class="nav-divider">
-            <div class="custom-mobile-nav__exclusive-links"></div> {% endcomment %}
+
+
+
+            {% endcomment %}
+
+
             <div class="custom-mobile-nav__footer">
+              <div class="custom-mobile-nav__footer-logo">
+                <img src="https://cdn.shopify.com/s/files/1/0936/8820/1518/files/Zarr_Logo_Black_d8ae27b7-345d-4282-8e49-bf7aed638d60.png?v=1761943755" alt="ZARR Logo" loading="lazy">
+              </div>
               <div class="custom-mobile-nav__social-links">
                 {%- for link in linklists['social-media'].links -%}
                   <a href="{{ link.url }}" target="_blank" rel="noopener">{%- assign social_icon = link.title | handle | prepend: 'icon-' -%}{% render social_icon %}</a>
@@ -74,15 +206,6 @@
                   {%- endfor -%}
                 </ul>
               </div>
-              <div class="custom-mobile-nav__footer-section">
-    
-             
-              </div>
-              <div class="custom-mobile-nav__footer-bottom-nav">
-                {%- for link in linklists['footer-bottom-links'].links -%}
-                  <a href="{{ link.url }}">{{ link.title }}</a>
-                {%- endfor -%}
-              </div>
             </div>
           </div>
         {% endfor %}
@@ -94,3 +217,51 @@
     </div>
   </div>
 </div>
+
+{% comment %} 
+<script>
+(function() {
+  const mobileNav = document.getElementById('CustomMobileNav');
+  if (!mobileNav) return;
+
+  const closeBtn = mobileNav.querySelector('.custom-mobile-nav__close-btn');
+  const tabButtons = mobileNav.querySelectorAll('.custom-mobile-nav__tab-btn[data-menu-handle]');
+  const panels = mobileNav.querySelectorAll('.custom-mobile-nav__panel');
+
+  let currentMenuHandle = null; // 👈 store currently active tab
+
+  // Tab button click handler
+  tabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const menuHandle = this.getAttribute('data-menu-handle');
+      currentMenuHandle = menuHandle; // 👈 store selected handle
+      
+      // remove active from all
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      panels.forEach(panel => panel.classList.remove('active'));
+      
+      // add active to selected
+      this.classList.add('active');
+      const activePanel = mobileNav.querySelector(`.custom-mobile-nav__panel[data-menu-handle="${menuHandle}"]`);
+      if (activePanel) activePanel.classList.add('active');
+    });
+  });
+
+  // Close button redirect handler
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      let redirectUrl = '/';
+      if (currentMenuHandle === 'mobile-nav-women') {
+        redirectUrl = '/collections/women';
+      } else if (currentMenuHandle === 'mobile-nav-men') {
+        redirectUrl = '/collections/men';
+      } else if (currentMenuHandle === 'mobile-nav-kids') {
+        redirectUrl = '/collections/kids';
+      }
+
+      // redirect after small delay for UX smoothness
+      window.location.href = redirectUrl;
+    });
+  }
+})();
+</script> {% endcomment %}
