@@ -66,12 +66,40 @@
                     </a>
                     
                     <div class="custom-mobile-nav__grid" style="margin-top: 20px;">
-                      <a href="/collections/men-sale" class="custom-mobile-nav__grid-item">
+                      {%- comment -%} Men Sale with submenu {%- endcomment -%}
+                      <a href="/collections/men-sale" class="custom-mobile-nav__grid-item" data-title="Men Sale" data-has-submenu="true">
                         <span class="custom-mobile-nav__grid-item-title">Men Sale</span>
                       </a>
-                      <a href="/collections/women-sale" class="custom-mobile-nav__grid-item">
+                      <div class="custom-mobile-nav__submenu-data" style="display: none;">
+                        <div class="submenu-grid-wrapper">
+                          <div class="custom-mobile-nav__grid">
+                            <a href="/collections/men-sale-20" class="custom-mobile-nav__grid-item" data-title="Sale 20% OFF">
+                              <span class="custom-mobile-nav__grid-item-title">Sale 20% OFF</span>
+                            </a>
+                            <a href="/collections/men-sale-50" class="custom-mobile-nav__grid-item" data-title="Sale 50% OFF">
+                              <span class="custom-mobile-nav__grid-item-title">Sale 50% OFF</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {%- comment -%} Women Sale with submenu {%- endcomment -%}
+                      <a href="/collections/women-sale" class="custom-mobile-nav__grid-item" data-title="Women Sale" data-has-submenu="true">
                         <span class="custom-mobile-nav__grid-item-title">Women Sale</span>
                       </a>
+                      <div class="custom-mobile-nav__submenu-data" style="display: none;">
+                        <div class="submenu-grid-wrapper">
+                          <div class="custom-mobile-nav__grid">
+                            <a href="/collections/women-sale-20" class="custom-mobile-nav__grid-item" data-title="Sale 20% OFF">
+                              <span class="custom-mobile-nav__grid-item-title">Sale 20% OFF</span>
+                            </a>
+                            <a href="/collections/women-sale-50" class="custom-mobile-nav__grid-item" data-title="Sale 50% OFF">
+                              <span class="custom-mobile-nav__grid-item-title">Sale 50% OFF</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      
                       {% comment %} <a href="/collections/accessories-sale" class="custom-mobile-nav__grid-item">
                         <span class="custom-mobile-nav__grid-item-title">Accessories Sale</span>
                       </a>
