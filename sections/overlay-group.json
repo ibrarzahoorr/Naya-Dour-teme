@@ -215,7 +215,7 @@
       "settings": {
         "menu_drawer_position": "right",
         "heading": "Menu",
-        "menu": "main-menu",
+        "menu": "women",
         "parent_menu": false,
         "parent_link_style": "caption-font",
         "parent_uppercase": true,
