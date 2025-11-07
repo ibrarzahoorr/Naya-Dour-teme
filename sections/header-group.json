@@ -102,7 +102,7 @@
       "settings": {
         "header_layout": "logo_center_menu_left",
         "sticky_header": "always",
-        "menu": "top-level-categort-draft",
+        "menu": "top-level-category",
         "parent_menu": true,
         "dropdown_icon": "disable",
         "dropdown_event_type": "hover",
