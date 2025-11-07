@@ -105,7 +105,7 @@
         "menu": "top-level-category",
         "parent_menu": true,
         "dropdown_icon": "disable",
-        "dropdown_event_type": "click",
+        "dropdown_event_type": "hover",
         "link_style": "caption-font",
         "uppercase": true,
         "bolder_font": true,
