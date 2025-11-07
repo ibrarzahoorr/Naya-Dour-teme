@@ -94,3 +94,50 @@
     </div>
   </div>
 </div>
+
+<script>
+(function() {
+  const mobileNav = document.getElementById('CustomMobileNav');
+  if (!mobileNav) return;
+
+  const closeBtn = mobileNav.querySelector('.custom-mobile-nav__close-btn');
+  const tabButtons = mobileNav.querySelectorAll('.custom-mobile-nav__tab-btn[data-menu-handle]');
+  const panels = mobileNav.querySelectorAll('.custom-mobile-nav__panel');
+
+  let currentMenuHandle = null; // 👈 store currently active tab
+
+  // Tab button click handler
+  tabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const menuHandle = this.getAttribute('data-menu-handle');
+      currentMenuHandle = menuHandle; // 👈 store selected handle
+      
+      // remove active from all
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      panels.forEach(panel => panel.classList.remove('active'));
+      
+      // add active to selected
+      this.classList.add('active');
+      const activePanel = mobileNav.querySelector(`.custom-mobile-nav__panel[data-menu-handle="${menuHandle}"]`);
+      if (activePanel) activePanel.classList.add('active');
+    });
+  });
+
+  // Close button redirect handler
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      let redirectUrl = '/';
+      if (currentMenuHandle === 'mobile-nav-women') {
+        redirectUrl = '/collections/women';
+      } else if (currentMenuHandle === 'mobile-nav-men') {
+        redirectUrl = '/collections/men';
+      } else if (currentMenuHandle === 'mobile-nav-SALE') {
+        redirectUrl = '/collections/11.11 sale';
+      }
+
+      // redirect after small delay for UX smoothness
+      window.location.href = redirectUrl;
+    });
+  }
+})();
+</script>
