@@ -127,12 +127,12 @@
   if (closeBtn) {
     closeBtn.addEventListener('click', function() {
       let redirectUrl = '/';
-      if (currentMenuHandle === 'mobile-nav-SALE') {
+      if (currentMenuHandle === 'mobile-nav-women') {
         redirectUrl = '/collections/11-11-sale';
-      {% comment %} } else if (currentMenuHandle === 'mobile-nav-men') {
-        redirectUrl = '/collections/./';
+      } else if (currentMenuHandle === 'mobile-nav-men') {
+        redirectUrl = '/collections/men';
       } else if (currentMenuHandle === 'mobile-nav-SALE') {
-        redirectUrl = '/collections/11-11-sale'; {% endcomment %}
+        redirectUrl = '/collections/11-11-sale';
       }
 
       // redirect after small delay for UX smoothness
