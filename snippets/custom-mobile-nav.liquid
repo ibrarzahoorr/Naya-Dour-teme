@@ -10,9 +10,7 @@
       <div class="custom-mobile-nav__tabs">
         {%- comment -%} Dynamically generate tabs from the 'top-level-category' menu {%- endcomment -%}
         {% for link in linklists.top-level-category.links %}
-          <a href="{{ link.url }}" class="custom-mobile-nav__tab-btn" data-menu-handle="{{ link.handle }}" data-has-children="{% if linklists[link.handle].links.size > 0 %}true{% else %}false{% endif %}">
-            {{ link.title }}
-          </a>
+          <button class="custom-mobile-nav__tab-btn" data-menu-handle="{{ link.handle }}">{{ link.title }}</button>
         {% endfor %}
       </div>
 
@@ -20,14 +18,11 @@
         {%- comment -%} Dynamically generate panels for each tab {%- endcomment -%}
         {% for link in linklists.top-level-category.links %}
           {% assign panel_menu_handle = link.handle %}
-          <div class="custom-mobile-nav__panel" data-menu-handle="{{ panel_menu_handle }}" style="display: none;">
+          <div class="custom-mobile-nav__panel" data-menu-handle="{{ panel_menu_handle }}">
             <div class="custom-mobile-nav__grid">
               {% for sub_link in linklists[panel_menu_handle].links %}
                 <a href="{{ sub_link.url }}" class="custom-mobile-nav__grid-item" data-title="{{ sub_link.title | escape }}" {% if sub_link.links != blank %}data-has-submenu="true"{% endif %}>
                   <span class="custom-mobile-nav__grid-item-title">{{ sub_link.title }}</span>
-                  {% if sub_link.links != blank %}
-                    <span class="custom-mobile-nav__arrow">{% render 'icon-chevron-right' %}</span>
-                  {% endif %}
                 </a>
                 {% if sub_link.links != blank %}
                   <div class="custom-mobile-nav__submenu-data" style="display: none;">
@@ -36,9 +31,6 @@
                         {% for child_link in sub_link.links %}
                           <a href="{{ child_link.url }}" class="custom-mobile-nav__grid-item" data-title="{{ child_link.title | escape }}" {% if child_link.links != blank %}data-has-submenu="true"{% endif %}>
                             <span class="custom-mobile-nav__grid-item-title">{{ child_link.title }}</span>
-                            {% if child_link.links != blank %}
-                              <span class="custom-mobile-nav__arrow">{% render 'icon-chevron-right' %}</span>
-                            {% endif %}
                           </a>
                           {% if child_link.links != blank %}
                             <div class="custom-mobile-nav__submenu-data" style="display: none;">
@@ -61,6 +53,13 @@
               {% endfor %}
             </div>
             
+            {% comment %} <hr class="nav-divider">
+            
+            <div class="custom-mobile-nav__brands"></div>
+            <hr class="nav-divider">
+            <div class="custom-mobile-nav__new-collections"></div>
+            <hr class="nav-divider">
+            <div class="custom-mobile-nav__exclusive-links"></div> {% endcomment %}
             <div class="custom-mobile-nav__footer">
               <div class="custom-mobile-nav__social-links">
                 {%- for link in linklists['social-media'].links -%}
@@ -75,7 +74,10 @@
                   {%- endfor -%}
                 </ul>
               </div>
-              <div class="custom-mobile-nav__footer-section"></div>
+              <div class="custom-mobile-nav__footer-section">
+    
+             
+              </div>
               <div class="custom-mobile-nav__footer-bottom-nav">
                 {%- for link in linklists['footer-bottom-links'].links -%}
                   <a href="{{ link.url }}">{{ link.title }}</a>
