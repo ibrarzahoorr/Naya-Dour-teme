@@ -22,11 +22,15 @@
             
             {%- comment -%} Check if menu exists and has items {%- endcomment -%}
             {% if linklists[panel_menu_handle] != blank and linklists[panel_menu_handle].links.size > 0 %}
+              {%- comment -%} This section will show for Women, Men or any menu that exists {%- endcomment -%}
               <div class="custom-mobile-nav__grid">
                 {% for sub_link in linklists[panel_menu_handle].links %}
+                  {%- comment -%} Main menu item (e.g., Dresses, Tops, Bottoms for Women) {%- endcomment -%}
                   <a href="{{ sub_link.url }}" class="custom-mobile-nav__grid-item" data-title="{{ sub_link.title | escape }}" {% if sub_link.links != blank %}data-has-submenu="true"{% endif %}>
                     <span class="custom-mobile-nav__grid-item-title">{{ sub_link.title }}</span>
                   </a>
+                  
+                  {%- comment -%} First level submenu (e.g., Casual Dresses, Formal Dresses) {%- endcomment -%}
                   {% if sub_link.links != blank %}
                     <div class="custom-mobile-nav__submenu-data" style="display: none;">
                       <div class="submenu-grid-wrapper">
@@ -35,14 +39,31 @@
                             <a href="{{ child_link.url }}" class="custom-mobile-nav__grid-item" data-title="{{ child_link.title | escape }}" {% if child_link.links != blank %}data-has-submenu="true"{% endif %}>
                               <span class="custom-mobile-nav__grid-item-title">{{ child_link.title }}</span>
                             </a>
+                            
+                            {%- comment -%} Second level submenu {%- endcomment -%}
                             {% if child_link.links != blank %}
                               <div class="custom-mobile-nav__submenu-data" style="display: none;">
                                 <div class="submenu-grid-wrapper">
                                   <div class="custom-mobile-nav__grid">
                                     {% for grandchild_link in child_link.links %}
-                                      <a href="{{ grandchild_link.url }}" class="custom-mobile-nav__grid-item" data-title="{{ grandchild_link.title | escape }}">
+                                      <a href="{{ grandchild_link.url }}" class="custom-mobile-nav__grid-item" data-title="{{ grandchild_link.title | escape }}" {% if grandchild_link.links != blank %}data-has-submenu="true"{% endif %}>
                                         <span class="custom-mobile-nav__grid-item-title">{{ grandchild_link.title }}</span>
                                       </a>
+                                      
+                                      {%- comment -%} Third level submenu {%- endcomment -%}
+                                      {% if grandchild_link.links != blank %}
+                                        <div class="custom-mobile-nav__submenu-data" style="display: none;">
+                                          <div class="submenu-grid-wrapper">
+                                            <div class="custom-mobile-nav__grid">
+                                              {% for great_grandchild_link in grandchild_link.links %}
+                                                <a href="{{ great_grandchild_link.url }}" class="custom-mobile-nav__grid-item" data-title="{{ great_grandchild_link.title | escape }}">
+                                                  <span class="custom-mobile-nav__grid-item-title">{{ great_grandchild_link.title }}</span>
+                                                </a>
+                                              {% endfor %}
+                                            </div>
+                                          </div>
+                                        </div>
+                                      {% endif %}
                                     {% endfor %}
                                   </div>
                                 </div>
@@ -56,7 +77,7 @@
                 {% endfor %}
               </div>
             {% else %}
-              {%- comment -%} If no menu found, show custom content {%- endcomment -%}
+              {%- comment -%} If no menu found, show custom content for Sale {%- endcomment -%}
               <div class="custom-mobile-nav__empty-panel">
                 {% if panel_menu_handle == '11-11-sale' or panel_menu_handle == 'sale' %}
                   <div class="custom-mobile-nav__custom-content">
@@ -99,13 +120,6 @@
                           </div>
                         </div>
                       </div>
-                      
-                      {% comment %} <a href="/collections/accessories-sale" class="custom-mobile-nav__grid-item">
-                        <span class="custom-mobile-nav__grid-item-title">Accessories Sale</span>
-                      </a>
-                      <a href="/collections/clearance" class="custom-mobile-nav__grid-item">
-                        <span class="custom-mobile-nav__grid-item-title">Clearance</span>
-                      </a> {% endcomment %}
                     </div>
                   </div>
                 {% endif %}
