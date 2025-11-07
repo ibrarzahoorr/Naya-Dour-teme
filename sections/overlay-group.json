@@ -85,6 +85,7 @@
         },
         "secondary_menu_7BzrTd": {
           "type": "secondary_menu",
+          "disabled": true,
           "settings": {
             "show_menu_title": false,
             "menu_title_1": "Discover",
@@ -102,6 +103,7 @@
         },
         "localization_JaMdgt": {
           "type": "localization",
+          "disabled": true,
           "settings": {
             "enable_language": true,
             "short_language": false,
@@ -118,6 +120,7 @@
         },
         "empty_space_T3rxzx": {
           "type": "empty_space",
+          "disabled": true,
           "settings": {
             "desktop_height": 0.5,
             "mobile_height": 0.5
@@ -132,6 +135,7 @@
         },
         "account_XprC9C": {
           "type": "account",
+          "disabled": true,
           "settings": {
             "show_icon": true,
             "text_style": "subheading-font",
@@ -150,7 +154,8 @@
         "context_image_thzY9M": {
           "type": "context_image",
           "settings": {
-            "context_image_width": 96,
+            "context_image": "shopify://shop_images/ND-LOGO-text-black-01.png",
+            "context_image_width": 232,
             "context_media_ratio": "auto",
             "context_image_radius": "default",
             "context_image_link": "",
@@ -162,6 +167,7 @@
         },
         "text_YiwTif": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "subheading": "",
             "heading": "",
