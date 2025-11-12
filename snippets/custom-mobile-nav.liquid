@@ -78,7 +78,7 @@
               </div>
             {% else %}
               {%- comment -%} If no menu found, show custom content for Sale {%- endcomment -%}
-              <div class="custom-mobile-nav__empty-panel">
+              {% comment %} <div class="custom-mobile-nav__empty-panel">
                 {% if panel_menu_handle == '11-11-sale' or panel_menu_handle == 'sale' %}
                   <div class="custom-mobile-nav__custom-content">
                     <a href="/collections/11-11-sale" class="custom-mobile-nav__sale-button">
@@ -123,7 +123,7 @@
                     </div>
                   </div>
                 {% endif %}
-              </div>
+              </div> {% endcomment %}
             {% endif %}
             
             <div class="custom-mobile-nav__footer">
