@@ -78,52 +78,54 @@
               </div>
             {% else %}
               {%- comment -%} If no menu found, show custom content for Sale {%- endcomment -%}
-           <div class="custom-mobile-nav__empty-panel">
-                {% if panel_menu_handle == 'BLESSED FRIDAY SALE' or panel_menu_handle == 'sale' %}
-                  <div class="custom-mobile-nav__custom-content">
-                    <a href="/collections/blessed-friday-sale" class="custom-mobile-nav__sale-button">
-                      {% comment %} <span class="sale-button-text">🎉 11.11 MEGA SALE</span>
-                      <span class="sale-button-subtitle">Up to 50% OFF</span> {% endcomment %}
-                    </a>
-                    
-                    <div class="custom-mobile-nav__grid" style="margin-top: 20px;">
-                      {%- comment -%} Men Sale with submenu {%- endcomment -%}
-                      <a href="/collections/men-sale" class="custom-mobile-nav__grid-item" data-title="Men Sale" data-has-submenu="true">
-                        <span class="custom-mobile-nav__grid-item-title">Men Sale</span>
-                      </a>
-                      <div class="custom-mobile-nav__submenu-data" style="display: none;">
-                        <div class="submenu-grid-wrapper">
-                          <div class="custom-mobile-nav__grid">
-                            <a href="https://nayadour.co/collections/30-off-men" class="custom-mobile-nav__grid-item" data-title="Sale 20% OFF">
-                              <span class="custom-mobile-nav__grid-item-title">Sale 30% OFF</span>
-                            </a>
-                            <a href="https://nayadour.co/collections/50-off-men" class="custom-mobile-nav__grid-item" data-title="Sale 50% OFF">
-                              <span class="custom-mobile-nav__grid-item-title">Sale 50% OFF</span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {%- comment -%} Women Sale with submenu {%- endcomment -%}
-                      <a href="/collections/women-sale" class="custom-mobile-nav__grid-item" data-title="Women Sale" data-has-submenu="true">
-                        <span class="custom-mobile-nav__grid-item-title">Women Sale</span>
-                      </a>
-                      <div class="custom-mobile-nav__submenu-data" style="display: none;">
-                        <div class="submenu-grid-wrapper">
-                          <div class="custom-mobile-nav__grid">
-                            <a href="https://nayadour.co/collections/30-off-women" class="custom-mobile-nav__grid-item" data-title="Sale 20% OFF">
-                              <span class="custom-mobile-nav__grid-item-title">Sale 20% OFF</span>
-                            </a>
-                            <a href="https://nayadour.co/collections/50-off-women" class="custom-mobile-nav__grid-item" data-title="Sale 50% OFF">
-                              <span class="custom-mobile-nav__grid-item-title">Sale 50% OFF</span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                {% endif %}
-              </div> 
+              <div class="custom-mobile-nav__empty-panel">
+  {% if panel_menu_handle == 'blessed-friday-sale' or panel_menu_handle contains 'sale' %}
+    <div class="custom-mobile-nav__custom-content">
+
+      <a href="/collections/blessed-friday-sale" class="custom-mobile-nav__sale-button">
+      </a>
+
+      <div class="custom-mobile-nav__grid" style="margin-top: 20px;">
+
+        <!-- Men Sale -->
+        <a href="/collections/men-sale" class="custom-mobile-nav__grid-item" data-title="Men Sale" data-has-submenu="true">
+          <span class="custom-mobile-nav__grid-item-title">Men Sale</span>
+        </a>
+        <div class="custom-mobile-nav__submenu-data" style="display: none;">
+          <div class="submenu-grid-wrapper">
+            <div class="custom-mobile-nav__grid">
+              <a href="https://nayadour.co/collections/30-off-men" class="custom-mobile-nav__grid-item">
+                <span class="custom-mobile-nav__grid-item-title">Sale 30% OFF</span>
+              </a>
+              <a href="https://nayadour.co/collections/50-off-men" class="custom-mobile-nav__grid-item">
+                <span class="custom-mobile-nav__grid-item-title">Sale 50% OFF</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Women Sale -->
+        <a href="/collections/women-sale" class="custom-mobile-nav__grid-item" data-title="Women Sale" data-has-submenu="true">
+          <span class="custom-mobile-nav__grid-item-title">Women Sale</span>
+        </a>
+        <div class="custom-mobile-nav__submenu-data" style="display: none;">
+          <div class="submenu-grid-wrapper">
+            <div class="custom-mobile-nav__grid">
+              <a href="https://nayadour.co/collections/30-off-women" class="custom-mobile-nav__grid-item">
+                <span class="custom-mobile-nav__grid-item-title">Sale 20% OFF</span>
+              </a>
+              <a href="https://nayadour.co/collections/50-off-women" class="custom-mobile-nav__grid-item">
+                <span class="custom-mobile-nav__grid-item-title">Sale 50% OFF</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  {% endif %}
+</div>
+
             {% endif %}
             
             <div class="custom-mobile-nav__footer">
