@@ -254,7 +254,7 @@
         "desktop_pixels_height": 720,
         "mobile_height_type": "pixels",
         "mobile_pixels_height": 630,
-        "enable_autoplay": false,
+        "enable_autoplay": true,
         "autoplay_speed": 5,
         "effect": "coverflow",
         "transition_duration": 1200,
