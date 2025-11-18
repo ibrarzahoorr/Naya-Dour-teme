@@ -109,7 +109,7 @@
     "variant_row": "Color,",
     "linked_product_size": 36,
     "linked_product_size_mobile": 46,
-    "linked_products_image_ratio": "2/3",
+    "linked_products_image_ratio": "auto",
     "linked_products_image_radius": "3px",
     "swatch_config": "",
     "show_selected_variant_value": false,
