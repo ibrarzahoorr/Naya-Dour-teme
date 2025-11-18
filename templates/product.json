@@ -411,7 +411,7 @@
       "settings": {
         "overlap": "disable",
         "enable_sticky_content": true,
-        "sticky_offset": 96,
+        "sticky_offset": 68,
         "media_position": "left",
         "gallery_style": "gallery",
         "gallery_size": 6,
