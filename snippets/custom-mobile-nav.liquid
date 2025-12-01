@@ -80,7 +80,7 @@
               {%- comment -%} If no menu found, show custom content for Sale {%- endcomment -%}
               <div class="custom-mobile-nav__empty-panel">
   {% if panel_menu_handle == 'blessed-friday-sale' or panel_menu_handle contains 'sale' %}
-    <div class="custom-mobile-nav__custom-content">
+    {% comment %} <div class="custom-mobile-nav__custom-content">
 
       <a href="/collections/blessed-friday-sale" class="custom-mobile-nav__sale-button">
       </a>
@@ -122,7 +122,7 @@
         </div>
 
       </div>
-    </div>
+    </div> {% endcomment %}
   {% endif %}
 </div>
 
