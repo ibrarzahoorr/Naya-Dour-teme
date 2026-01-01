@@ -26,7 +26,7 @@
               <div class="custom-mobile-nav__grid">
                 {% for sub_link in linklists[panel_menu_handle].links %}
                   {%- comment -%} Main menu item (e.g., Dresses, Tops, Bottoms for Women) {%- endcomment -%}
-                  <a href="{{ sub_link.url }}" class="" data-title="{{ sub_link.title | escape }}" {% if sub_link.links != blank %}data-has-submenu="true"{% endif %}>
+                  <a href="{{ sub_link.url }}" class="custom-mobile-nav__grid-item" data-title="{{ sub_link.title | escape }}" {% if sub_link.links != blank %}data-has-submenu="true"{% endif %}>
                     <span class="custom-mobile-nav__grid-item-title">{{ sub_link.title }}</span>
                   </a>
                   
