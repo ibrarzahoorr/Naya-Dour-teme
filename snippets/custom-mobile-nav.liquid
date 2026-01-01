@@ -23,7 +23,7 @@
             {%- comment -%} Check if menu exists and has items {%- endcomment -%}
             {% if linklists[panel_menu_handle] != blank and linklists[panel_menu_handle].links.size > 0 %}
               {%- comment -%} This section will show for Women, Men or any menu that exists {%- endcomment -%}
-              <div class="custom-mobile-nav__grid">
+              {% comment %} <div class="custom-mobile-nav__grid">
                 {% for sub_link in linklists[panel_menu_handle].links %}
                   {%- comment -%} Main menu item (e.g., Dresses, Tops, Bottoms for Women) {%- endcomment -%}
                   <a href="{{ sub_link.url }}" class="custom-mobile-nav__grid-item" data-title="{{ sub_link.title | escape }}" {% if sub_link.links != blank %}data-has-submenu="true"{% endif %}>
@@ -75,7 +75,7 @@
                     </div>
                   {% endif %}
                 {% endfor %}
-              </div>
+              </div> {% endcomment %}
             {% else %}
               {%- comment -%} If no menu found, show custom content for Sale {%- endcomment -%}
               <div class="custom-mobile-nav__empty-panel">
