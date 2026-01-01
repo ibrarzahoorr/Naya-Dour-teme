@@ -132,16 +132,14 @@
   }
 
   .custom-mobile-nav__grid-item {
-    /* background-color: #f5f5f5; */
-    /* border-radius: 8px; */
-    /* padding: 20px 15px; */
-    /* text-decoration: none; */
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px 15px;
+    text-decoration: none;
     color: #000;
     font-weight: 600;
     font-size: 16px;
     text-align: center;
-    display:flex;
-    flex-direction:column
   }
 
   .custom-mobile-nav__brands {
